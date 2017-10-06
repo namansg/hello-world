@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo node index.js
+sudo node /home/ubuntu/hello-world/index.js
