@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo node /home/ubuntu/hello-world/index.js
+sudo forever start /home/ubuntu/hello-world/index.js
