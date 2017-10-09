@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo forever stop /home/ubuntu/hello-world/index.js
