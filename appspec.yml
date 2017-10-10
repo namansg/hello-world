@@ -9,4 +9,5 @@ hooks:
       timeout: 300
       runas: root
   AllowTraffic:
-    - timeout: 300
+    - location: .
+      timeout: 300
