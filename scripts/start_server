@@ -1,3 +1,2 @@
 #!/bin/bash
-#sudo /usr/local/bin/forever start /home/ubuntu/hello-world/index.js
-ls
+sudo /usr/local/bin/forever start /home/ubuntu/hello-world/index.js
