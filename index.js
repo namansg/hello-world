@@ -1,18 +1,20 @@
-var express = require("express");
-var http = require("http");
+const express = require('express');
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json({
+  limit: '10mb',
+  strict: false
+});
+const app = express();
+app.use(jsonParser);
+app.set('port', 80);
 
-var app = express();
-
-app.get('/',function(req,res){
-  res.send('Hello World');
+app.get("*",function(req,res){
+  var path = req.path;
+  if(!path) return res.status(401).send("Unauthorized");
+  if(path.startsWith('/unauth')) return res.status(401).send("Unauthorized");
+  res.send("OK");
 });
 
-app.listen(80, function() {
-    console.log("Node app is running at localhost:80");
+app.listen(app.get('port'), function() {
+    console.log("Node app is running at localhost:" + app.get('port'));
 });
-
-// http.createServer(function (request, response) {
-//   response.writeHead(200, {'Content-Type': 'text/plain'});
-//   response.end('Hello World...\n');
-// }).listen(80);
-// console.log('server started');
