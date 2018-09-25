@@ -7,4 +7,6 @@ RUN apt-get install git -y
 
 ADD . .
 
+RUN npm i
+
 CMD ["node","index.js"]
